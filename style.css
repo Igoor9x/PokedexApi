@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+.header{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: url(./IMG/pokes.gif);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 0px 55%;
+    }
+.logo img{
+    height: 4.8rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.tema button{
+    height: 2rem;
+    cursor: pointer;
+    font-size: 12pt;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 7px;
+    border: 2px solid #f1ee38;
+    transition: .3s;
+    
+}
+.container{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 50px;
+    background: url(./IMG/TemaDesktop.jpg);
+    background-size: cover;
+    background-position: 0px 100%;
+}
+.container.dark{
+    background: url(./IMG/temaDeskDark.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+.form{
+    color: #fff;
+    background-color: #3c3c3ce5;
+    border:  2px solid #6affda;
+    box-shadow: 1px 1px 10px 10px #2adfe6;
+    border-radius: 5px;
+    padding: 3.5rem 4rem;
+}
+.form.dark{
+    color: #000000;
+    background-color: #d3d0d0b9;
+    border:  2px solid #f89f1abb;
+    box-shadow: 1px 1px 10px 7px #f8e646;
+}
+.form h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+.pokemon{
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-transform:capitalize; 
+}
+.pokeImg{
+    display: flex;
+    justify-content: space-evenly;
+} 
+.pokeImg img{
+    position: relative;
+    user-select: none;
+    height: 12.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+} 
+.search input{
+    font-size: 17pt;
+    padding: 6.5px;
+    margin: 5px;
+    border-radius: 7px;
+    border: 2px solid #f1ee38;
+    outline: none;
+}    
+.search button{
+    font-size: 17pt;
+    border-radius: 50%;
+    padding: 7px;
+    border: 2px solid #f1ee38;
+    cursor: pointer;
+    transition: .3s;
+}    
+.next-prev .prev, .next, .form-text button{
+    margin: 50px 15px 0px 10px;
+    font-size: 16pt;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 7px;
+    border: 2px solid #f1ee38;
+    cursor: pointer;
+    transition: .3s;
+}
+.next-prev .prev:hover, .next:hover,
+.search button:hover, .tema button:hover,
+ .form-text button:hover{
+    background: #201c1c;
+    color: #fff;
+}
+@media (max-width: 768px){
+    
+    
+    .form{
+        color: #fff;
+        background-color: #3c3c3ce5;
+        border:  2px solid #6affda;
+        box-shadow: 1px 1px 10px 10px #2adfe6;
+        border-radius: 5px;
+        padding: 4rem 2rem;
+    }
+    
+    .form h3{
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+    .pokemon{
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-transform:capitalize; 
+    }  
+    .pokeImg img{
+        position: relative;
+        user-select: none;
+        height: 7.5rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    } 
+    
+} 
+@media (max-width: 425px){
+    .logo img{
+        height: 4.5rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+    }
+    .tema button{
+        height: 1.5rem;
+        cursor: pointer;
+    }
+    .container{
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0px 50px;
+        background: url(./IMG/temaMob.jpg);
+        background-size: cover;
+        background-position: 50%;
+    }
+    .container.dark{
+        background: url(./IMG/temaMobDark.png);
+        background-size: cover;
+    }
+    .form{
+        color: #fff;
+        background-color: #3c3c3ce5;
+        border:  2px solid #d2fc3b;
+        box-shadow: 1px 1px 10px 10px #f1ee38;
+        border-radius: 5px;
+        padding: 20px 10px;
+    } 
+    .form h3{
+        font-size: 32pt;
+        margin-bottom: 1rem;
+    }   
+    .pokemon{
+        font-size: 2.3rem;
+        margin-bottom: 1rem;
+        text-transform:capitalize;
+        padding: 15px;
+    }   
+       
+    .pokeImg{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .pokeImg img{
+        position: relative;
+        user-select: none;
+        height: 6rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }    
+    .search input{
+        font-size: 12pt;
+        padding: 4.5px;
+        margin: 5px;
+        border-radius: 7px;
+        border: 2px solid #f1ee38;
+        outline: none;
+    }    
+    .search button{
+        font-size: 12pt;
+        border-radius: 50%;
+        padding: 7px;
+        border: 2px solid #f1ee38;
+        cursor: pointer;
+        transition: .3s;
+    }    
+    .next-prev .prev, .next, .tema button, .form-text button{
+        margin: 12px 15px;
+        font-size: 12pt;
+        font-weight: 500;
+        border-radius: 7px;
+        padding: 7px;
+        border: 2px solid #f1ee38;
+        cursor: pointer;
+        transition: .3s;
+    }    
+    }
+@media (max-width: 375px) {
+    .form{
+        color: #fff;
+        background-color: #3c3c3ce5;
+        border:  2px solid #dfff6a;
+        box-shadow: 1px 1px 10px 10px #f1ee38;
+        border-radius: 5px;
+    }    
+    .form h3{
+        font-size: 32pt;
+        margin-bottom: 2rem;
+    }
+    .pokemon{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-transform:capitalize;
+        padding: 15px;
+    }
+    .pokeImg img{
+        position: relative;
+        user-select: none;
+        height: 5rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+    .search input{
+        font-size: 10.5pt;
+        padding: 4.5px;
+        margin: 5px;
+        border-radius: 7px;
+        border: 2px solid #f1ee38;
+        outline: none;
+    } 
+    .next-prev .prev, .next, .tema button, .form-text button{
+        margin: 10px 13px;
+        font-size: 8.5pt;
+        font-weight: 500;
+        border-radius: 7px;
+        padding: 5px;
+        border: 2px solid #f1ee38;
+        cursor: pointer;
+        transition: .3s;
+    }
+    /* Segunda pagina */
+        
+    
+    
+}
+
+
+/* }
+
+
+.form-text.dark{
+    color: #000000;
+    background-color: #d3d0d0e1;
+    border:  2px solid #fd2fb86b;
+    box-shadow: 1px 1px 10px 7px #b146f8;
+}
+.texto{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #a7a10f;    
+    }
+
+
+
+.search button, .search input{
+        margin: 10px 10px;
+        margin-bottom: 2rem;
+    } 
+
+
+.next-prev .prev, .next, .tema button, .form-text button{
+    margin: 0px 15px;
+    font-size: 13pt;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 7px;
+    border: 2px solid #f1ee38;
+    cursor: pointer;
+    transition: .3s;
+} */

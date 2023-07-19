@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><a href="./second.html"><img src="./IMG/pokemon-pikachu.gif" alt=""></a></div>
+        <div class="tema"><button>Mudar tema</button></div>
+    </div>
+    <div class="container">
+        <div class="form">
+            <h3>Pokédex</h3>
+            <div class="pokemon">
+                <span class="pokemonName">Digite um pokemon</span>
+                <span class="id">#000</span>
+            </div>
+            <div class="pokeImg">
+                <img class="front" src="./IMG/4xjS.gif" alt="">
+                <img class="back" src="./IMG/4xjS.gif" alt="">
+                
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Digite o nome do pokémon">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="next-prev">
+                <button class="prev">&lt&lt Anterior</button>
+                <button class="next">Próximo &gt&gt</button>
+            </div>
+        </div>  
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

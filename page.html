@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie sua Pokédex</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><a href="./second.html"><img src="./IMG/pokemon-pikachu.gif" alt=""></a></div>
+        <div class="tema"><button>Mudar tema</button></div>
+    </div>
+    <div class="container">
+        <div class="form-text all">
+            <h2>Vamos criar a sua própria Pokédex!</h2>
+            <span class="texto tutorial"> Primeiro, abra o seu VS Code ou o seu editor de códigos de sua preferência,
+                monte a sua página HTML e estilize-a como quiser, utilizando o CSS ao seu gosto.
+                <br><br>
+                <span class="code">const seuElemento = document.querySelector(".suaclasseHTML");</span>
+                <br><br>
+                Após isso, faremos a requisição da API.
+                Para realizar a requisição da API, primeiro criamos uma constante com o nome "pegarItemAPI()". Toda requisição fetch (GET) é uma promessa que resolveremos com async/await, seguindo o código da seguinte forma:
+                <br><br>
+                <span class="code">const pegarItemAPI = async (dadosPokemon) => {
+                };</span>
+                <br><br> 
+                Após criar a constante "pegarItemAPI", criaremos as funções para requisitar os dados da API, criando assim três novas constantes: uma para a URL (de onde obteremos os dados da API), uma para a resposta da API e outra para converter as respostas em formato JSON. Seguindo o exemplo, ficará da seguinte forma:
+                <br><br>
+                <span class="code">const pegarItemAPI = async (dadosPokemon) => {<br> 
+                    const pegarDadosAPI = `https://pokeapi.co/api/v2/pokemon/${seuElemento}`;<br> 
+                    const respostaAPI = await fetch(pegarDadosAPI);<br> 
+                    const resultadoAPI = await respostaAPI.json();<br> 
+                    return resultadoAPI;<br>
+                  }; <span class="coment">(Sempre retorne o resultado da requisição da API).</span>
+                </span>
+                <br><br>
+                Com isso, a requisição da API deve estar concluída de forma correta, mas não basta apenas obter os dados, agora precisamos mostrar as informações que estamos recebendo da API.
+                Para fazer isso, vamos criar uma nova constante global também com "async", pois ela faz parte da requisição da API.
+                <br><br>
+                <span class="code">const mostrarItemAPI = async (dadosPokemon) => {<br>
+                    const dadosAPI = await pegarItemAPI(dadosPokemon);<br>
+                  };
+                  </span>
+                  <br><br>
+                  Com isso, toda a parte da API está concluída, mas ainda não está pronto. Voltamos para o topo do código e agora obtemos os elementos do HTML para que possamos alterá-los com os dados da API.
+                  <br><br>
+                  <span class="code">const nomePokemon = document.querySelector(".nomepokemon");<br>
+                  const numeroPokemon = document.querySelector(".numeropokemon");<br>
+                  const imagemPokemon = document.querySelector(".imagempokemon");
+                  </span>
+                  <br><br>
+                  Com os elementos HTML já obtidos no JavaScript, agora é apenas substituir os dados do HTML pelos dados da API.
+                  <br><br>
+                  <span class="code">nomePokemon.innerHTML = dadosAPI.name;<br>
+                    numeroPokemon.innerHTML = dadosAPI.id;
+                    </span>
+                  <br><br>
+                  Para alterarmos as imagens, utilizaremos o atributo "src" em vez do "innerHTML". (Você deve ter criado uma div com uma tag img e o link da imagem do Pokémon).
+                  <br><br>
+                  <span class="code">imagemPokemon.src = dadosAP["sprites"]["versions"]["generation-v"]["black-white"]["animated"]["front_default"];<br>
+                    seuElemento.value = "";
+                    </span>
+                  <br><br>
+                  Após isso, estamos quase lá para ver alguma coisa. Só precisamos fazer o botão de pesquisa funcionar.
+                    Para isso, voltamos onde estão nossas constantes e obtemos a constante do botão.
+                  <br><br>
+                  <span class="code">const botaoProcurar = document.querySelector("meuBotao");</span>
+                  <br><br>
+                  Depois de obter o botão HTML, criamos um evento de clique para ele, com uma função anônima (arrow function), para que algo aconteça quando ele for clicado ou pressionado. Faremos isso da seguinte forma:
+                  <br><br>
+                  <span class="code">botaoProcurar.addEventListener("click", (evento) => {<br>
+                    evento.preventDefault();<br>
+                    const procurarPokemon = seuElemento.value.toLowerCase();<br>
+                    dadosAPI(procurarPokemon);<br>
+                  });
+                  </span>
+                  <br><br>
+                  Com isso, se você pesquisar pelo nome ou número do seu Pokémon, ele aparecerá alterando o nome, o número e a imagem.
+                    Para fazer o botão "Enter" do teclado funcionar, podemos criar a seguinte função:
+                  <br><br>
+                  <span class="code">seuElemento.addEventListener("keyup", (evento) => {<br>
+                    if (evento.code === "Enter") {<br>
+                      const dadosPokemon = evento.target.value.toLowerCase();<br>
+                      dadosAPI(dadosPokemon);<br>
+                    }br
+                  });
+                  </span>
+                  <br><br>
+                  Com isso, o botão "Enter" também pesquisará pelos seus Pokémon.
+                    E, para finalizar, faremos os botões "Anterior" e "Próximo" funcionarem.
+                    Voltamos para o início do JavaScript, onde estão nossas constantes, e agora criamos uma variável chamada "pokemonID" para trocar de Pokémon.
+                  <br><br>
+                  <span class="code">let pokemonID = 0;</span>
+                  <br><br>
+                  Após a criação da variável, faremos uma alteração na parte que altera o "innerHTML". Abaixo das constantes de "innerHTML", adicionamos o seguinte código:
+                  <br><br>
+                  <span class="code">pokemonID = dadosAPI.id;</span>
+                  <br><br>
+                  Após isso, obteremos os botões nas constantes, da seguinte forma:
+                  <br><br>
+                  <span class="code">const botaoProximo = document.querySelector(".proximo");<br>
+                    const botaoAnterior = document.querySelector(".anterior");
+                    </span>
+                  <br><br>
+                  E, por fim, criamos os eventos para cada botão:
+                  <br><br>
+                  <span class="code">botaoProximo.addEventListener("click", () => {<br>
+                    pokemonID += 1;<br>
+                    dadosAPI(pokemonID);<br>
+                  });<br>
+                  
+                  botaoAnterior.addEventListener("click", () => {<br>
+                    pokemonID -= 1;<br>
+                    dadosAPI(pokemonID);<br>
+                  });
+                  </span>
+                  <br><br>
+                  E, por fim, chamamos a função principal para iniciar:
+                  <br><br>
+                  <span class="code">dadosAPI(pokemonID);</span>
+                  <br><br>
+                  Com isso, finalizamos toda a API e ela deve funcionar normalmente, tanto pesquisando pelo número quanto pelo nome do Pokémon. <br><br>
+                    Com esta documentação, aprendemos a obter os elementos do HTML e usá-los no JavaScript, realizar requisições de API com o método fetch (usando async/await), fazer com que os botões funcionem com eventos de "click" e também criar eventos para as teclas do teclado, como a tecla "Enter".
+                    Espero ter ajudado e que você tenha conseguido aprender um pouco mais sobre programação. <br><br>
+                    Caso queira voltar para a Pokédex de exemplo, basta clicar no botão.
+                  <br><br>     
+            </span>
+            <a href="./index.html"><button>Ir para pokédex</button></a>
+        </div>
+    </div>  
+</body>
+<script src="script2.js"></script>
+</html>

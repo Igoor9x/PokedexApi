@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    background:#fac20b; 
+}
+body.dark{
+    background: #eb3d3d;
+    color: #fdff87;
+}
+.header{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: url(./IMG/pokes.gif);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 0px 55%;
+}
+
+.tema button{
+    height: 2rem;
+    cursor: pointer;
+    padding: 2px;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo img{
+    height: 5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+ .form-text button{
+    margin: 12px 15px;
+    font-size: 12pt;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 7px;
+    border: 2px solid #f1ee38;
+    cursor: pointer;
+    transition: .3s;
+}
+.tema button:hover,
+.form-text button:hover{
+   background: #201c1c;
+   color: #fff;
+}
+.tema button, a button{
+    margin: 10px 13px;
+    font-size: 12pt;
+    font-weight: 500;
+    border-radius: 7px;
+    border: 2px solid #292927;
+    cursor: pointer;
+    transition: .3s;
+}
+.form-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    height: 84vh;
+    padding:  0.1rem 0.2rem;
+}
+.form-text h2{
+    font-size: 1.8rem;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+.texto{
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-size: 16pt;
+    color: #fff;
+    text-align: center;
+} 
+a button{
+    width: 10rem;
+    height: 3rem;
+}
+a {
+    width: 10rem;
+    height: 36rem;
+    margin: 10px  0px 0px 0px;
+}
+.page{
+margin-top: 15px;
+    font-size: 16pt;
+    color: #f3f3f3;
+}
+.tutorial{
+    text-align:initial;
+    padding: 0px 0px;
+}
+
+.code{
+    font-size: 14pt;
+    font-weight: 600;
+    color: #132338;
+}
+
+@media (max-width: 500px){
+    .tutorial{
+        font-size: 10pt; 
+    }
+    .code{
+        font-size: 10pt;
+        font-weight: 600;
+        color: #132338;
+    }
+}
+@media (max-width: 375px){
+    
+    .tutorial{
+        font-size: 10pt;
+        
+    }
+    
+    .code{
+        font-size: 10pt;
+        font-weight: 600;
+        color: #132338;
+    }
+
+}
+
+    
+    
+    
+
+
+
